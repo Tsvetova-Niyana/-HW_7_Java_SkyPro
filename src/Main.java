@@ -34,7 +34,7 @@ public class Main {
         int totalMoney = 0;
         int i = 1;
 
-        while (totalMoney <= 2_459_000) {
+        while (totalMoney < 2_459_000) {
             totalMoney = totalMoney + money;
             System.out.println("Месяц " + i + ", сумма накоплений равна " + totalMoney + " рублей");
             i++;
@@ -107,15 +107,16 @@ public class Main {
 
         System.out.println("\nЗадание 3");
 
-        double bornRatePersonInYear = 17.0 / 1000.0;
-        double mortalityRatePersonInYear = 8.0 / 1000.0;
-        double totalPopulation = 12_000_000.0;
+        int bornRatePersonInYear = 17;
+        int coeff = 1000;
+        int mortalityRatePersonInYear = 8;
+        int totalPopulation = 12_000_000;
         int year = 1;
 
         while (year <= 10) {
-            totalPopulation = totalPopulation + totalPopulation * bornRatePersonInYear -
-                    totalPopulation * mortalityRatePersonInYear;
-            System.out.printf("Год %d, численность населения составляет %.2f человек %n" , year, totalPopulation );
+            totalPopulation = totalPopulation + totalPopulation * (bornRatePersonInYear -
+                    mortalityRatePersonInYear) / coeff;
+            System.out.printf("Год %d, численность населения составляет %d человек %n" , year, totalPopulation );
             year++;
         }
 
@@ -202,7 +203,7 @@ public class Main {
         int depositMonth = 0;
         int year = 9;
         int depositTerm = month * year;
-//        System.out.println(depositAmount + " + " + bankPercent);
+
         while (depositTerm > depositMonth) {
             depositAmount = depositAmount + depositAmount * bankPercent;
             depositMonth++;
