@@ -115,9 +115,7 @@ public class Main {
         while (year <= 10) {
             totalPopulation = totalPopulation + totalPopulation * bornRatePersonInYear -
                     totalPopulation * mortalityRatePersonInYear;
-            System.out.println("Год " + year + ", численность населения составляет " + (int)totalPopulation);
-//            System.out.printf("%.2f", totalPopulation);
-//            System.out.println();
+            System.out.printf("Год %d, численность населения составляет %.2f человек %n" , year, totalPopulation );
             year++;
         }
 
@@ -145,11 +143,11 @@ public class Main {
         double depositAmount = 15_000;
         double bankPercent = 0.07;
         int month = 0;
-//        System.out.println(depositAmount + " + " + bankPercent);
+
         while (depositAmount < 12_000_000) {
             depositAmount = depositAmount + depositAmount * bankPercent;
             month++;
-            System.out.println("Месяц " + month + ", сумма накоплений - " + depositAmount);
+            System.out.printf("Месяц %d, сумма накоплений - %.2f%n", month, depositAmount);
         }
     }
 
@@ -170,12 +168,12 @@ public class Main {
         double depositAmount = 15_000;
         double bankPercent = 0.07;
         int month = 0;
-//        System.out.println(depositAmount + " + " + bankPercent);
+
         while (depositAmount < 12_000_000) {
             depositAmount = depositAmount + depositAmount * bankPercent;
             month++;
             if (month % 6 == 0) {
-            System.out.println("Месяц " + month + ", сумма накоплений - " + depositAmount);
+            System.out.printf("Месяц %d, сумма накоплений - %.2f%n", month, depositAmount);
             }
         }
     }
@@ -209,7 +207,7 @@ public class Main {
             depositAmount = depositAmount + depositAmount * bankPercent;
             depositMonth++;
             if (depositMonth % 6 == 0) {
-            System.out.println("Месяц " + depositMonth + ", сумма накоплений - " + depositAmount);
+            System.out.printf("Месяц %d, сумма накоплений - %.2f%n",depositMonth, depositAmount);
             }
         }
     }
